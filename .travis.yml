@@ -1,0 +1,19 @@
+sudo: required
+language: generic
+#node_js:
+#  -7
+before_install:
+  - docker build -t nikhil133/checkpoint -f ./client/Dockerfile.dev ./client
+script:
+  - docker run -e CI=true nikhil133/checkpoint npm test
+
+after_success:
+  - docker build -t nikhil133/checkpoint-client ./client
+  - docker build -t nikhil133/checkpoint-nginx ./nginx
+  - docker build -t nikhil133/checkpoint-server ./server
+  - docker build -t nikhil133/checkpoint-worker ./worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push nikhil133/checkpoint-client
+  - docker push nikhil133/checkpoint-nginx 
+  - docker push nikhil133/checkpoint-server
+  - docker push nikhil133/checkpoint-worker
