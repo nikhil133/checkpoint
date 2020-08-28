@@ -2,25 +2,25 @@
     "AWSEBDockerrunVersion":2,
     "containerDefinitions":[
         {
-            "name":"multidoc-client",
+            "name":"client",
             "image":"nikhil133/client",
             "host":"client",
             "esential":false
         },
         {
-            "name":"multidoc-server",
+            "name":"server",
             "image":"nikhil133/server",
             "host":"api",
             "esential":false
         },
         {
-            "name":"multidoc-worker",
+            "name":"worker",
             "image":"nikhil133/worker",
             "host":"worker",
             "esential":false
         },
         {
-            "name":"multidoc-nginx",
+            "name":"nginx",
             "image":"nikhil133/nginx",
             "host":"nginx",
             "esential":true,
@@ -30,7 +30,7 @@
                     "containerPort":80
                 }
             ],
-            "links":["multidoc-client","multidoc-server"]
+            "links":["client","server"]
         }
     ]
 } 
