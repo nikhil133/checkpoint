@@ -12,7 +12,8 @@
             "name":"server",
             "image":"nikhil133/server",
             "host":"api",
-            "esential":false
+            "esential":false,
+            "memory":128
         },
         {
             "name":"worker",
