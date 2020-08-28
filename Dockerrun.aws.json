@@ -5,7 +5,8 @@
             "name":"client",
             "image":"nikhil133/client",
             "host":"client",
-            "esential":false
+            "esential":false,
+            "memory":128
         },
         {
             "name":"server",
@@ -17,7 +18,8 @@
             "name":"worker",
             "image":"nikhil133/worker",
             "host":"worker",
-            "esential":false
+            "esential":false,
+            "memory":128
         },
         {
             "name":"nginx",
@@ -30,7 +32,8 @@
                     "containerPort":80
                 }
             ],
-            "links":["client","server"]
+            "links":["client","server"],
+            "memory":128
         }
     ]
 } 
