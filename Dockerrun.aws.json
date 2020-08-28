@@ -3,28 +3,28 @@
     "containerDefinitions":[
         {
             "name":"client",
-            "image":"nikhil133/client",
+            "image":"nikhil133/checkpoint-client",
             "host":"client",
             "esential":false,
             "memory":128
         },
         {
             "name":"server",
-            "image":"nikhil133/server",
+            "image":"nikhil133/checkpoint-server",
             "host":"api",
             "esential":false,
             "memory":128
         },
         {
             "name":"worker",
-            "image":"nikhil133/worker",
+            "image":"nikhil133/checkpoint-worker",
             "host":"worker",
             "esential":false,
             "memory":128
         },
         {
             "name":"nginx",
-            "image":"nikhil133/nginx",
+            "image":"nikhil133/checkpoint-nginx",
             "host":"nginx",
             "esential":true,
             "portMappings":[
@@ -38,3 +38,7 @@
         }
     ]
 } 
+
+
+ 
+
