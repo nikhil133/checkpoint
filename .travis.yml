@@ -17,3 +17,15 @@ after_success:
   - docker push nikhil133/checkpoint-nginx 
   - docker push nikhil133/checkpoint-server
   - docker push nikhil133/checkpoint-worker
+
+deploy:
+    provider: elasticbeanstalk
+    region: ap-south-1
+    app: "multidocker-checkpoint"
+    env: "MultidockerCheckpoint-env"
+    bucket_name: "elasticbeanstalk-ap-south-1-562731450625"
+    bucket_path: "docker-checkpoint"
+    on:
+      branch: master
+    access_key_id: $AWS_KEY_KEY
+    secret_access_key: $AWS_SECRET_KEY
