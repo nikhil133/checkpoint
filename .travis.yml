@@ -19,6 +19,7 @@ after_success:
   - docker push nikhil133/checkpoint-worker
 
 deploy:
+    edge: true
     provider: elasticbeanstalk
     region: ap-south-1
     app: "multi-docker"
