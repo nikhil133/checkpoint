@@ -21,10 +21,10 @@ after_success:
 deploy:
     provider: elasticbeanstalk
     region: ap-south-1
-    app: "checkpoint-multidocker"
-    env: "CheckpointMultidocker-env"
+    app: "multi-docker"
+    env: "MultiDocker-env-1"
     bucket_name: "elasticbeanstalk-ap-south-1-562731450625"
-    bucket_path: "docker-checkpoint"
+    bucket_path: "multidocker-checkpoint"
     on:
       branch: master
     access_key_id: $AWS_ACCESS_KEY
